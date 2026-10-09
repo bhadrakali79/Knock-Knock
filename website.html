@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operation: Visit You💌</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --pink: #d95783;
+  --light: #fff0f5;
+  --ink: #392b3b;
+  --muted: #877888;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 5% 10%, #ffd9e5, transparent 35%),
+    radial-gradient(circle at 95% 90%, #e4dfff, transparent 35%),
+    #fffaf7;
+}
+
+.card {
+  width: 100%;
+  max-width: 620px;
+  padding: clamp(22px, 6vw, 44px);
+  background: #ffffffed;
+  border: 1px solid #f1dce5;
+  border-radius: 28px;
+  box-shadow: 0 25px 80px #73546b18;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--light);
+  color: var(--pink);
+  padding: 9px 13px;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.heart {
+  font-size: 52px;
+  margin: 22px 0 10px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 8vw, 49px);
+  line-height: 1.12;
+  margin: 0 0 18px;
+}
+
+h1 span { color: var(--pink); font-style: italic; }
+
+p {
+  line-height: 1.8;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed #e8cedb;
+  margin: 26px 0;
+}
+
+.question {
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hint { font-size: 12px; margin-top: 0; }
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+  margin-top: 22px;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+}
+
+.choice label {
+  display: block;
+  height: 100%;
+  padding: 17px;
+  background: white;
+  border: 1px solid #eee0e9;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.choice label:hover {
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.choice input:checked + label {
+  border: 2px solid var(--pink);
+  padding: 16px;
+  background: #fff2f6;
+}
+
+.choice input:focus-visible + label {
+  outline: 3px solid #d95783;
+  outline-offset: 3px;
+}
+
+.icon {
+  display: block;
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.choice strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.choice small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  display: block;
+}
+
+.date-panel {
+  display: none;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px dashed #e2a1b9;
+  border-radius: 17px;
+  background: #fff7fa;
+  text-align: left;
+}
+
+.options:has(#surprise:checked) + .date-panel {
+  display: block;
+  animation: appear .3s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.date-panel label, .field-label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+input[type="date"], input[type="text"], textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #e9d8e2;
+  border-radius: 11px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.extra { margin-top: 20px; text-align: left; }
+
+textarea {
+  resize: vertical;
+  min-height: 78px;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  margin-top: 23px;
+  padding: 16px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--pink);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:hover { background: #bd416d; }
+
+.fine-print {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 17px;
+}
+
+.footer {
+  font-size: 10px;
+  letter-spacing: .4px;
+  margin-top: 25px;
+}
+
+@media (max-width: 440px) {
+  body { padding: 12px; }
+  .options { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<main class="card">
+
+  <div class="tag">✦ TOP SECRET FRIENDSHIP DEPARTMENT ✦</div>
+
+  <div class="heart">💌</div>
+
+  <h1>Hellooooo Soldier, <span>Ramya...</span></h1>
+
+  <p>
+    This is an official notice that someone has been thinking
+    about visiting you.<br>
+    That someone is me. Obviously. 🙄<br><br>
+    Please complete this highly scientific scheduling
+    procedure so I can stop asking, "When are we meeting?"
+  </p>
+
+  <hr>
+
+  <p class="question">When may I invade your personal space? 👀</p>
+  <p class="hint">Choose your preferred level of chaos.</p>
+
+  <!-- Replace YOUR_EMAIL with your actual email address -->
+  <form action="https://formsubmit.co/prat777000@gmail.com"
+        method="POST">
+
+    <input type="hidden" name="_subject"
+           value="💌 Old Friend Visit Request!">
+
+    <input type="hidden" name="_template" value="table">
+
+    <div class="options">
+
+      <div class="choice">
+        <input type="radio" id="today" name="visit"
+               value="TODAY! 🚀" required>
+        <label for="today">
+          <span class="icon">🚀</span>
+          <strong>Today!</strong>
+          <small>I don't have any siddhi yet nor I have an anywhere door :( </small>
+        </label>
+      </div>
+
+      <div class="choice">
+        <input type="radio" id="tomorrow" name="visit"
+               value="Tomorrow 🌷">
+        <label for="tomorrow">
+          <span class="icon">🌷</span>
+          <strong>Tomorrow</strong>
+          <small>Kaaaaassshhhh, but not so high in budget too, yet! </small>
+        </label>
+      </div>
+
+      <div class="choice">
+        <input type="radio" id="weekend" name="visit"
+               value="This weekend 🍕">
+        <label for="weekend">
+          <span class="icon">🍕</span>
+          <strong>This weekend</strong>
+          <small>Only if there's a need for Goku to come.</small>
+        </label>
+      </div>
+
+      <div class="choice">
+        <input type="radio" id="surprise" name="visit"
+               value="Surprise me! 🎲">
+        <label for="surprise">
+          <span class="icon">🎲</span>
+          <strong>Surprise me!</strong>
+          <small>Let destiny choose. Pick a date below.</small>
+        </label>
+      </div>
+
+    </div>
+
+    <section class="date-panel">
+      <label for="visit-date">📅 Choose our meeting date</label>
+      <input type="date" id="visit-date" name="preferred_date">
+      <p class="hint">
+        Pick a day that works for you. No pressure, CUO.
+      </p>
+    </section>
+
+    <div class="extra">
+      <label class="field-label" for="name">
+        🕵️ Your name / secret identity
+      </label>
+      <input type="text" id="name" name="friend_name"
+             placeholder="The legendary human..." required>
+    </div>
+
+    <div class="extra">
+      <label class="field-label" for="message">
+        💬 Special instructions for your visitor?
+      </label>
+      <textarea id="message" name="message"
+        placeholder="Bring snacks. Bring yourself. Anything else? Call karooo"></textarea>
+    </div>
+
+    <button class="submit" type="submit">
+      SUBMIT MY OFFICIAL DECISION 💌
+    </button>
+
+  </form>
+
+  <p class="fine-print">
+    ⚖️ By submitting, you acknowledge that this visit may
+    include terrible jokes, unsolicited life updates, and
+    an unreasonable amount of laughter. And most importantlyyyy you taking me around Kashi and you talkinggg. <br>
+    Phir milenge chalte chalte...
+  </p>
+
+  <div class="footer">
+    MADE WITH ♥, FRIENDSHIP & QUESTIONABLE PLANNING
+    <br>Department of Adya Kali Clustered Souls · Est. 2026
+  </div>
+
+</main>
+</body>
+</html>
